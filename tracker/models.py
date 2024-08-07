@@ -15,3 +15,10 @@ class TrackingHistory(models.Model):
     amount = models.FloatField()
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now_add=True)
+
+
+class RequestLogs(models.Model):
+    request_info = models.TextField()
+    request_type = models.CharField(max_length=100)
+    request_path = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True)
