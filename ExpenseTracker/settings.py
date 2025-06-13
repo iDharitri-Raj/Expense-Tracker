@@ -83,16 +83,27 @@ WSGI_APPLICATION = 'ExpenseTracker.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'expense_tracker',
+#         'USER': 'root',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
+
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'expense_tracker',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
+    'default': dj_database_url.config(
+        default='postgresql://expense_tracker_db_kh5j_user:IYt9cFhBley0Hxt7cfFNmjyZ509ksorz@dpg-d162ssq4d50c73f0glng-a/expense_tracker_db_kh5j',
+        conn_max_age=600,
+        ssl_require=True
+    )
 }
+
 
 
 # Password validation
